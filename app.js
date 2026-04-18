@@ -19,7 +19,7 @@ function showScreen(name) {
 }
 
 async function verifyTelegram() {
-  const initData = Telegram.WebApp.initData;
+  const initData = window.Telegram?.WebApp?.initData;
   if (!initData) {
     showError('Telegram ma\'lumotlari topilmadi');
     return;
