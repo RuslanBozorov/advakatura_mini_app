@@ -19,9 +19,18 @@ function showScreen(name) {
 }
 
 async function verifyTelegram() {
+  // Test mode: ?test=true
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('test') === 'true') {
+    conversationId = 1;
+    showScreen('loading');
+    connectWebSocket();
+    return;
+  }
+  
   const initData = window.Telegram?.WebApp?.initData;
   if (!initData) {
-    showError('Telegram ma\'lumotlari topilmadi');
+    showError('Telegram ma\'lumotlari topilmadi. Telegram WebView ichida oching!');
     return;
   }
 
