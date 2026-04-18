@@ -1,6 +1,6 @@
 const API_URL = window.location.host.includes('localhost') 
   ? 'http://localhost:8000' 
-  : 'https://uncaressed-unpulverized-victor.ngrok-free.dev';
+  : 'https://advokatura.uz';
 let ws = null;
 let conversationId = null;
 let currentSubject = '';
@@ -51,7 +51,7 @@ async function verifyTelegram() {
 function connectWebSocket() {
   const isLocal = window.location.host.includes('localhost');
   const protocol = isLocal ? 'ws:' : 'wss:';
-  const host = isLocal ? 'localhost:8000' : 'uncaressed-unpulverized-victor.ngrok-free.dev';
+  const host = isLocal ? 'localhost:8000' : 'advokatura.uz';
   const wsUrl = `${protocol}//${host}/ws/chat/${conversationId}/`;
 
   ws = new WebSocket(wsUrl);
