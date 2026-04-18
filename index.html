@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Advokatura - Murojaat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="welcome-screen" class="screen active">
+            <div class="logo-container">
+                <div class="logo">⚖️</div>
+                <h1>Advokatura</h1>
+                <p class="subtitle">Yuridik xizmatlar platformasi</p>
+            </div>
+            <button id="start-btn" class="primary-btn">Murojaat boshlash</button>
+        </div>
+
+        <div id="subject-screen" class="screen">
+            <h2>Mavzu tanlang</h2>
+            <p class="hint">(Ixtiyoriy)</p>
+            <select id="subject-select" class="subject-select">
+                <option value="">Mavzu tanlang...</option>
+                <option value="consultation">Maslahat</option>
+                <option value="contract">Shartnoma masalalari</option>
+                <option value="dispute">Nizo</option>
+                <option value="criminal">Jinoiy ish</option>
+                <option value="family">Oilaviy masala</option>
+                <option value="property">Mol-mulk</option>
+                <option value="other">Boshqa</option>
+            </select>
+            <button id="subject-next-btn" class="primary-btn">Davom etish</button>
+        </div>
+
+        <div id="chat-screen" class="screen">
+            <div class="chat-header">
+                <div class="header-info">
+                    <span class="status-dot"></span>
+                    <span>Advokatura</span>
+                </div>
+            </div>
+            <div id="messages-container" class="messages-container">
+                <div class="welcome-message">
+                    <p>Xush kelibsiz! Savolingizni yozing, tez orada javob beramiz.</p>
+                </div>
+            </div>
+            <div id="typing-indicator" class="typing-indicator hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Xabaringizni yozing...">
+                <button id="send-btn" class="send-btn">➤</button>
+            </div>
+        </div>
+
+        <div id="loading-screen" class="screen">
+            <div class="spinner"></div>
+            <p>Ulanish...</p>
+        </div>
+
+        <div id="error-screen" class="screen">
+            <div class="error-icon">⚠️</div>
+            <h2>Xatolik</h2>
+            <p id="error-message">Noma'lum xatolik yuz berdi</p>
+            <button id="retry-btn" class="primary-btn">Qayta urinish</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
